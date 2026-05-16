@@ -1,0 +1,87 @@
+Day,Temperature,Event,Dish,Quantity
+Monday,28,0,Biryani,110
+Monday,28,0,Pizza,75
+Monday,28,0,Burger,60
+Monday,28,0,Fried Rice,80
+Monday,28,0,Pasta,55
+Monday,28,0,Shawarma,70
+Monday,28,0,Faluda,40
+Monday,28,0,Curd Rice,65
+Monday,28,0,Lemon Rice,72
+Monday,28,0,Normal Meal,95
+Tuesday,30,0,Biryani,115
+Tuesday,30,0,Pizza,80
+Tuesday,30,0,Burger,65
+Tuesday,30,0,Fried Rice,82
+Tuesday,30,0,Pasta,58
+Tuesday,30,0,Shawarma,74
+Tuesday,30,0,Faluda,48
+Tuesday,30,0,Curd Rice,68
+Tuesday,30,0,Lemon Rice,76
+Tuesday,30,0,Normal Meal,100
+Wednesday,32,0,Biryani,125
+Wednesday,32,0,Pizza,85
+Wednesday,32,0,Burger,70
+Wednesday,32,0,Fried Rice,88
+Wednesday,32,0,Pasta,62
+Wednesday,32,0,Shawarma,78
+Wednesday,32,0,Faluda,60
+Wednesday,32,0,Curd Rice,72
+Wednesday,32,0,Lemon Rice,80
+Wednesday,32,0,Normal Meal,105
+Thursday,34,0,Biryani,130
+Thursday,34,0,Pizza,90
+Thursday,34,0,Burger,75
+Thursday,34,0,Fried Rice,92
+Thursday,34,0,Pasta,65
+Thursday,34,0,Shawarma,82
+Thursday,34,0,Faluda,75
+Thursday,34,0,Curd Rice,78
+Thursday,34,0,Lemon Rice,84
+Thursday,34,0,Normal Meal,110
+Friday,35,1,Biryani,210
+Friday,35,1,Pizza,145
+Friday,35,1,Burger,120
+Friday,35,1,Fried Rice,150
+Friday,35,1,Pasta,100
+Friday,35,1,Shawarma,135
+Friday,35,1,Faluda,120
+Friday,35,1,Curd Rice,95
+Friday,35,1,Lemon Rice,105
+Friday,35,1,Normal Meal,180
+Saturday,36,1,Biryani,240
+Saturday,36,1,Pizza,170
+Saturday,36,1,Burger,140
+Saturday,36,1,Fried Rice,165
+Saturday,36,1,Pasta,115
+Saturday,36,1,Shawarma,150
+Saturday,36,1,Faluda,145
+Saturday,36,1,Curd Rice,110
+Saturday,36,1,Lemon Rice,118
+Saturday,36,1,Normal Meal,210
+Sunday,37,1,Biryani,260
+Sunday,37,1,Pizza,180
+Sunday,37,1,Burger,150
+Sunday,37,1,Fried Rice,175
+Sunday,37,1,Pasta,125
+Sunday,37,1,Shawarma,165
+Sunday,37,1,Faluda,160
+Sunday,37,1,Curd Rice,120
+Sunday,37,1,Lemon Rice,128
+Sunday,37,1,Normal Meal,230
+Monday,40,0,Biryani,100
+Monday,40,0,Pizza,70
+Monday,40,0,Burger,55
+Monday,40,0,Fried Rice,75
+Monday,40,0,Pasta,50
+Monday,40,0,Shawarma,68
+Monday,40,0,Faluda,130
+Monday,40,0,Curd Rice,115
+Monday,40,0,Lemon Rice,125
+Monday,40,0,Normal Meal,90
+Tuesday,41,0,Biryani,98
+Tuesday,41,0,Pizza,68
+Tuesday,41,0,Burger,52
+Tuesday,41,0,Fried Rice,72
+Tuesday,41,0,Pasta,48
+Thursday,36,1,Ice Cream,160

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Restaurant AI</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="background"></div>
+
+    <div class="container">
+
+        <div class="left-panel">
+
+            <div class="logo">🍽</div>
+
+            <h1>Smart Restaurant AI</h1>
+
+            <p class="subtitle">
+                AI Powered Food Demand Prediction System for Modern Restaurants
+            </p>
+
+            <div class="features">
+
+                <div class="feature-card">
+                    <h3>📈 Smart Forecasting</h3>
+                    <p>Predict food demand using machine learning algorithms.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>💰 Reduce Waste</h3>
+                    <p>Prepare accurate quantities and reduce food wastage.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>⚡ Faster Decisions</h3>
+                    <p>Make business decisions instantly with AI predictions.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="right-panel">
+
+            <div class="form-box">
+
+                <h2>Demand Prediction</h2>
+
+                <div class="input-group">
+
+                    <label>Select Day</label>
+
+                    <select id="day">
+                        <option>Monday</option>
+                        <option>Tuesday</option>
+                        <option>Wednesday</option>
+                        <option>Thursday</option>
+                        <option>Friday</option>
+                        <option>Saturday</option>
+                        <option>Sunday</option>
+                    </select>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Temperature (°C)</label>
+
+                    <input
+                        type="number"
+                        id="temperature"
+                        placeholder="Enter Temperature"
+                    >
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Special Event</label>
+
+                    <select id="event">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+
+                </div>
+
+                <button onclick="predictDemand()">
+                    Predict Demand
+                </button>
+
+                <div id="result" class="result-box"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+<script>
+
+async function predictDemand() {
+
+    const day = document.getElementById("day").value;
+
+    const temperature =
+        document.getElementById("temperature").value;
+
+    const event =
+        document.getElementById("event").value;
+
+
+    document.getElementById("result").innerHTML = `
+        <div class="loading">
+            Generating AI Predictions...
+        </div>
+    `;
+
+    try {
+
+        const response = await fetch("/predict", {
+
+            method: "POST",
+
+            headers: {
+                "Content-Type": "application/json"
+            },
+
+            body: JSON.stringify({
+                day: day,
+                temperature: temperature,
+                event: event
+            })
+
+        });
+
+        const data = await response.json();
+
+        // Error Handling
+        if (data.error) {
+
+            document.getElementById("result").innerHTML = `
+
+                <div class="error-box">
+                    ${data.error}
+                </div>
+
+            `;
+
+            return;
+        }
+
+        // Dynamic Result Cards
+        let resultHTML = `
+
+            <h3>Prediction Results</h3>
+
+            <div class="top-banner">
+                AI Business Forecast Generated Successfully
+            </div>
+
+        `;
+
+        for (const dish in data) {
+
+            let quantity = data[dish];
+
+            let status = "";
+
+            if (quantity >= 200) {
+
+                status = "🔥 Very High Demand";
+
+            }
+
+            else if (quantity >= 120) {
+
+                status = "📈 High Demand";
+
+            }
+
+            else if (quantity >= 80) {
+
+                status = "✅ Medium Demand";
+
+            }
+
+            else {
+
+                status = "⚠ Low Demand";
+
+            }
+
+            resultHTML += `
+
+                <div class="dish-card">
+
+                    <div>
+
+                        <span>${dish}</span>
+
+                        <p class="status">
+                            ${status}
+                        </p>
+
+                    </div>
+
+                    <strong>
+                        ${quantity} Plates
+                    </strong>
+
+                </div>
+
+            `;
+        }
+
+        document.getElementById("result").innerHTML =
+            resultHTML;
+
+    }
+
+    catch (error) {
+
+        document.getElementById("result").innerHTML = `
+
+            <div class="error-box">
+                Server Error Occurred
+            </div>
+
+        `;
+
+        console.log(error);
+    }
+}
+
+</script>
+
+</body>
+</html>
