@@ -366,3 +366,20 @@ button:hover {
     }
 
 }
+.footer {
+
+    text-align: center;
+
+    padding: 20px;
+
+    color: #cbd5e1;
+
+    font-size: 14px;
+
+    letter-spacing: 1px;
+}
+
+.footer strong {
+
+    color: #38bdf8;
+}
